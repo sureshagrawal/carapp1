@@ -8,6 +8,8 @@ public class App
     public static void main( String[] args )
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-
+        Car car = (Car) context.getBean(Car.class);
+        System.out.println(car);
+        car.drive();
     }
 }
