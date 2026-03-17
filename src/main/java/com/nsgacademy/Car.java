@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class Car {
     @Autowired
@@ -14,12 +16,15 @@ public class Car {
     Engine engine;
 
     @Autowired
-    Tyre tyre;
+    List<Tyre> tyres;
 
     public void drive(){
         battery.supplyPower();
         engine.start();
-        tyre.rotate();
+
+        for(Tyre tyre : tyres)
+            tyre.rotate();
+
         System.out.println("Car is running");
     }
 
@@ -28,7 +33,7 @@ public class Car {
         return "Car{" +
                 "battery=" + battery +
                 ", engine=" + engine +
-                ", tyre=" + tyre +
+                ", tyres=" + tyres +
                 '}';
     }
 }
