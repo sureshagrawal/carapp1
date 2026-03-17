@@ -7,21 +7,21 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     @Bean
     public Tyre ty1(){
-        return new Tyre("Font Left");
+        return new TubeTyre("Font Left");
     }
 
     @Bean
     public Tyre ty2(){
-        return new Tyre("Front Right");
+        return new TubelessTyre("Front Right");
     }
 
     @Bean
     public Tyre ty3(){
-        return new Tyre("Rear Left");
+        return new TubeTyre("Rear Left");
     }
 
     @Bean
     public Tyre ty4(){
-        return new Tyre("Rear Right");
+        return new TubelessTyre("Rear Right");
     }
 }
